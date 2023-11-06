@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+
+<h1>BOGGLE!</h1>
+
+<form action="/submit-guess" name="guess-submission">
+    <input type="text" name="guess-submission">
+    <button for="guess-submission">SUBMIT</button>
+</form>
+
+{% endblock %}

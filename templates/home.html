@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/boggle.css">
+    <title>BOGGLE!</title>
+</head>
+<body>
+
+<h1>BOGGLE!</h1>
+
+<table class="board">
+  <tbody>
+    {% for row in board%}
+    <tr>
+      {% for cell in row %}
+      <td>{{ cell }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<form method="POST" class="add-word">
+  <input class="word" name="word" />
+  <button>SUBMIT GUESS</button>
+</form>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+<script src="/static/boggle.js"></script>
+</body>
+</html>
