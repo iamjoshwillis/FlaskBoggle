@@ -1,6 +1,8 @@
 class BoggleGame {
     
   constructor(boardId, secs = 60) {
+
+    console.log("test")
     this.secs = secs;
     this.showTimer();
 
@@ -8,9 +10,9 @@ class BoggleGame {
     this.words = new Set();
     this.board = $(boardId);
 
-    this.timer = serInterval(this.tick.bind(this), 1000);
+    // this.timer = setInterval(this.tick.bind(this), 1000);
 
-    $(".add-word", this.board).on("submit", this.wordSubmit.bind(this));
+    $(".add-word").on("submit", this.wordSubmit.bind(null, this.board));
   }
 
   showWord(word) {
@@ -52,4 +54,5 @@ class BoggleGame {
   }
 }
 
+const testRun = new BoggleGame("first", 60)
 console.log("IS THIS WORKING?");
